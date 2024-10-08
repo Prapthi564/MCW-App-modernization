@@ -1,8 +1,11 @@
 
 Start-Transcript -Path C:\WindowsAzure\Logs\CloudLabsCustomScriptExtension21.txt -Append
 
+Set-ExecutionPolicy -ExecutionPolicy bypass -Force
 
+$SqlPass = "demo!pass123"
 
+# Enable SQL Server ports on the Windows firewall
 function Add-SqlFirewallRule {
     $fwPolicy = $null
     $fwPolicy = New-Object -ComObject HNetCfg.FWPolicy2
@@ -33,7 +36,7 @@ function Setup-Sql {
 
     $ServerName = 'SQLSERVER2008'
     $DatabaseName = 'PartsUnlimited'
-    $SqlPass = "demo!pass123"
+    
     $Cmd = "USE [master] CREATE DATABASE [$DatabaseName]"
     Invoke-Sqlcmd $Cmd -QueryTimeout 3600 -ServerInstance $ServerName
 
@@ -52,9 +55,6 @@ function Setup-Sql {
 }
 
 Setup-Sql
-
-
-
 
 function Wait-Install {
     $msiRunning = 1
@@ -147,7 +147,21 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 # Use .NET classes to extract the contents of the file
 [System.IO.Compression.ZipFile]::ExtractToDirectory($sourceFile, $destinationFolder) 
 
+# Download and install Integration Runtime
+$WebClient = New-Object System.Net.WebClient
+$WebClient.DownloadFile("https://download.microsoft.com/download/E/4/7/E4771905-1079-445B-8BF9-8A1A075D8A10/IntegrationRuntime_5.41.8909.1.msi","C:\IntegrationRuntime.msi") 
+$msiPath = "C:\IntegrationRuntime.msi"
+$logPath = "C:\IntegrationRuntime_Install.log"
 
+Start-Process msiexec.exe -ArgumentList "/i `"$msiPath`" /quiet /norestart /log `"$logPath`"" -Wait
+
+# Download and install Integration Runtime
+$WebClient = New-Object System.Net.WebClient
+$WebClient.DownloadFile("https://c2rsetup.officeapps.live.com/c2r/downloadEdge.aspx?platform=Default&source=EdgeStablePage&Channel=Stable&language=en&brand=M100","C:\MicrosoftEdgeSetup.exe")
+$msiPath = "C:\MicrosoftEdgeSetup.exe"
+$logPath = "C:\MicrosoftEdgeSetup.log"
+
+Start-Process msiexec.exe -ArgumentList "/i `"$msiPath`" /quiet /norestart /log `"$logPath`"" -Wait
 
 Unregister-ScheduledTask -TaskName "Install Lab Requirements" -Confirm:$false
 
