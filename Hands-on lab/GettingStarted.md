@@ -91,7 +91,7 @@ In this hands-on lab, the architecture flow begins by using Azure Migrate to ass
    
 1. Confirm you have a resource group present with name **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />**. Last six digits in the resource group name are unique for every user.
 
-    ![](media/image10.png "Resource groups")
+    ![](media/image10.png "Resource Group")
 
    
 1. Now, click on Next from the lower right corner to move to the next page.
