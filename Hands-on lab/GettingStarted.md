@@ -54,12 +54,15 @@ In this hands-on lab, the architecture flow begins by using Azure Migrate to ass
 
    ![](media/Getting_started01.png "Lab Environment")
 
-1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided during registration. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from the lower right corner. Also, you can start, stop, and restart virtual machines from the **Resources** tab.
+1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided during registration. Also, you can start, stop, and restart virtual machines from the **Resources** tab.
 
    ![](media/Getting_started03.png "Lab Environment")
  
     > You will see SUFFIX value on the **Environment Details** tab, use it wherever you see SUFFIX or Deployment ID in lab steps.
 
+1. To enable copying from the lab guide to the Virtual machine(JumpVM), enable **VM Native Clipboard (1)** and click **Okay (2)**. You can open the Lab Guide on separate and full window by selecting the **Split Window (3)** from the top right corner. 
+
+   ![](media/Split&Copy.png "Split and enable Copying")
 
 ## Login to Azure Portal
 
