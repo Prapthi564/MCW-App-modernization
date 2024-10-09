@@ -1,11 +1,11 @@
 # .NET App Modernization
-### Overall Estimated Duration: 4.5 Hours
+### Overall Estimated Duration: 4.5 Hours 
 
 ## Overview
 In this hands-on lab, you will migrate a legacy on-premises application to Microsoft Azure using various Azure services and tools. Over the years, cloud computing has revolutionized how applications are hosted and managed, offering benefits such as scalability, security, and reduced infrastructure overhead. Azure provides a comprehensive suite of tools and services to facilitate the seamless migration of applications and databases from on-premises environments to the cloud.
 
 In this lab, we will guide you through the process of setting up Azure Migrate, assessing your existing on-premises application, and migrating it to Azure App Service using the App Service Migration Assistant. You will also learn how to migrate on-premises databases to Azure SQL Database and enhance the application's functionality with Azure's serverless offerings, such as Azure Functions. Additionally, we'll cover the setup of a CI/CD pipeline using GitHub Actions to automate deployments and explore advanced topics like securing application secrets with Azure Key Vault, performance testing, and deploying the application using Azure Application Gateway and Firewall. 
-
+ 
 By the end of this lab, you will gain hands-on experience in modernizing applications for the cloud, implementing cloud-native services, and leveraging Azure's capabilities to improve scalability, security, and performance.
 
 ## Objectives
@@ -54,12 +54,15 @@ In this hands-on lab, the architecture flow begins by using Azure Migrate to ass
 
    ![](media/Getting_started01.png "Lab Environment")
 
-1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided during registration. You can also open the Lab Guide on separate and full window by selecting the **Split Window** from the lower right corner. Also, you can start, stop, and restart virtual machines from the **Resources** tab.
+1. To get the lab environment details, you can select the **Environment Details** tab. Additionally, the credentials will also be emailed to your email address provided during registration. Also, you can start, stop, and restart virtual machines from the **Resources** tab.
 
    ![](media/Getting_started03.png "Lab Environment")
  
     > You will see SUFFIX value on the **Environment Details** tab, use it wherever you see SUFFIX or Deployment ID in lab steps.
 
+1. To enable copying from the lab guide to the Virtual machine(JumpVM), enable **VM Native Clipboard (1)** and click **Ok (2)**. You can open the Lab Guide on separate and full window by selecting the **Split Window (3)** from the top right corner. 
+
+   ![](media/Split&Copy.png "Split and enable Copying")
 
 ## Login to Azure Portal
 
@@ -91,7 +94,8 @@ In this hands-on lab, the architecture flow begins by using Azure Migrate to ass
    
 1. Confirm you have a resource group present with name **hands-on-lab-<inject key="DeploymentID" enableCopy="false" />**. Last six digits in the resource group name are unique for every user.
 
-    ![](media/image10.png "Resource groups")
+    ![](media/image10.png "Resource Group")
+
    
 1. Now, click on Next from the lower right corner to move to the next page.
 
