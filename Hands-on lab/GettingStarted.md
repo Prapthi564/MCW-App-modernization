@@ -81,6 +81,12 @@ In this hands-on lab, the architecture flow begins by using Azure Migrate to ass
    * Password: <inject key="AzureAdUserPassword"></inject>
    
      ![](media/image8.png "Enter Password")
+
+1. If you see the pop-up Action Required, keep default and then click on Ask later. If you see the pop-up Help us protect your account, click on Skip for now(14 days until this is required), and then click on Next.
+
+  ![](media/mfa.png "Enter MFA")
+
+ > NOTE: Do not enable MFA, select Ask Later.
      
 1. If you see the pop-up **Stay Signed in?**, click No
 
@@ -110,5 +116,6 @@ Learner Support Contacts:
  
 Now, click on **Next** from the lower right corner to move on to the next page.
 
+![](media/next_button.png "Next")
 
 ## Happy Learning!!
