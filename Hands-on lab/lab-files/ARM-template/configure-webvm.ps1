@@ -55,31 +55,33 @@ Enable-CloudLabsEmbeddedShadow $vmAdminUsername $trainerUserName $trainerUserPas
 
 az provider register --namespace "Microsoft.LoadTestService"
 
-# Define the download URL and the local file path
-$downloadUrl = "https://download.microsoft.com/download/E/4/7/E4771905-1079-445B-8BF9-8A1A075D8A10/IntegrationRuntime_5.45.8999.1.msi"
-$installerPath = "$env:TEMP\IntegrationRuntime.msi"
- 
-# Download the MSI file
-Write-Output "Downloading the MSI package..."
-Invoke-WebRequest -Uri $downloadUrl -OutFile $installerPath
- 
-# Check if the file was downloaded successfully
-if (Test-Path $installerPath) {
-    Write-Output "Download completed. Installing the package..."
- 
-    # Install the MSI package silently
-    Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$installerPath`" /quiet /norestart" -Wait
- 
-    Write-Output "Installation completed."
- 
-    # Clean up the installer file if desired
-    Remove-Item -Path $installerPath -Force
-} else {
-    Write-Output "Failed to download the MSI package."
-}
-
 #Reset VM password to update it to random password, it is a custom image based VM
 net user $adminUsername $adminPassword
 
-#Stop Transcript
+# Dowload logon task file
+$WebClient = New-Object System.Net.WebClient
+$WebClient.DownloadFile("https://github.com/CloudLabs-MCW/MCW-App-modernization/blob/Migrate-Secure/Hands-on%20lab/lab-files/ARM-template/logontask.ps1", "C:\LabFiles\logontask.ps1")
+
+$LabFilesDirectory = "C:\LabFiles"
+
+#Enable Autologon
+$AutoLogonRegPath = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
+Set-ItemProperty -Path $AutoLogonRegPath -Name "AutoAdminLogon" -Value "1" -type String
+Set-ItemProperty -Path $AutoLogonRegPath -Name "DefaultUsername" -Value "$($env:ComputerName)\demouser" -type String
+Set-ItemProperty -Path $AutoLogonRegPath -Name "DefaultPassword" -Value $adminPassword -type String
+Set-ItemProperty -Path $AutoLogonRegPath -Name "AutoLogonCount" -Value "1" -type DWord
+
+# Scheduled Task
+$Trigger = New-ScheduledTaskTrigger -AtLogOn
+$User = "$($env:ComputerName)\demouser"
+$Action = New-ScheduledTaskAction -Execute "C:\Windows\System32\WindowsPowerShell\v1.0\Powershell.exe" -Argument "-executionPolicy Unrestricted -File $LabFilesDirectory\logontask.ps1"
+Register-ScheduledTask -TaskName "Setup" -Trigger $Trigger -User $User -Action $Action -RunLevel Highest -Force
+
+# Install Hyper-V and reboot
+Write-Header "Installing Hyper-V"
+Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools -Restart
+
 Stop-Transcript
+Restart-Computer -Force 
