@@ -1,0 +1,18 @@
+[ {
+  "Name": "Migrate .Net Apps To With Azure App Service",
+  "Language": "English",
+  "Files": [
+        {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/GettingStarted.md",
+      "Order": 1
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/1.md",
+      "Order": 2
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/2.md",
+      "Order": 3
+    }
+  ]
+} ]
