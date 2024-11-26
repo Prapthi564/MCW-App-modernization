@@ -14,5 +14,6 @@
       "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/2.md",
       "Order": 3
     }
+    
   ]
 } ]
