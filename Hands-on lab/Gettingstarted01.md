@@ -34,7 +34,7 @@ The architecture for migrating .NET applications to Azure involves using **Azure
 
 ## Architechture Diagram
 
-![](media/im3.JPG)
+![](media/im8.JPG)
 
 ## Explanation of Components
 
