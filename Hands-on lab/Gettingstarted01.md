@@ -4,30 +4,33 @@
 
 ## Overview
 
-Azure AI services offer a comprehensive set of tools that allow you to integrate intelligent features into your applications, such as image recognition, text analysis, and language processing. With services like Azure Cognitive Services, Azure Machine Learning, and Azure OpenAI, you can leverage advanced AI capabilities to streamline workflows, solve complex problems, and enhance the functionality of your applications. These services enable you to build powerful AI-driven solutions, making it easier to address real-world challenges and drive innovation in the cloud.
+The migration of .NET applications to Azure involves a series of steps to assess, plan, and execute the transition to cloud infrastructure. By using tools like Azure Migrate and App Service Migration Assistant, you can efficiently evaluate the compatibility of on-premises applications with Azure services. This process includes assessing web applications hosted on IIS, migrating databases to Azure SQL Database, and deploying web applications to Azure App Service for enhanced scalability and performance. These steps empower businesses to modernize their applications, ensuring they are optimized for the cloud and ready for future growth.
 
 ## Objective
 
-This lab is designed to equip participants with hands-on experience in exploring Azure AI services, such as Computer Vision and Cognitive Services, to enhance applications with capabilities like image recognition, text analysis, and speech processing.
+This lab is designed to provide participants with practical experience in migrating .NET applications to Azure using Azure Migrate and App Service Migration Assistant.
 
--   **Explore Computer Vision :** Implement a Cognitive Services resource to analyze images using the Computer Vision service. Configure and run a client app to extract captions, objects, and tags for visual insights.
--   **Explore Cognitive Services :** Implement an Anomaly Detector resource to analyze time-series data and detect anomalies. Configure a client app to identify unusual patterns for real-world insights.
+- **Review the Legacy On-Prem Application**: Explore the on-premises application to understand the current setup and prepare for migration to Azure App Service.
+- **Set up Azure Migrate for Assessment and Migration**: Configure Azure Migrate for the assessment and migration process, ensuring that all necessary tools and resources are available for a smooth migration.
+- **Migrate the Web Application with App Service Migration Assistant**: Perform the assessment of the web application and migrate it to Azure App Service, ensuring readiness and compatibility with Azure’s environment.
 
 ## Prerequisites
 
 Participants should have the following prerequisites:
 
--   **Basic Understanding of Cloud Computing :** Familiarity with fundamental cloud concepts and services, particularly in the context of Microsoft Azure.
--   **Knowledge of Azure Cognitive Services :** Understanding of the Azure Cognitive Services suite, including how to provision and use services like Computer Vision and Anomaly Detector.
--   **Experience with the Azure Portal**: Proficiency in navigating and using the Azure Portal to manage and configure cloud resources.
--   **Familiarity with PowerShell or Cloud Shell :** Basic knowledge of using PowerShell or Cloud Shell for running commands and scripts within Azure.
--   **Basic Programming Knowledge :** Understanding of scripting or programming languages like PowerShell, which are used for configuring and running client applications in Azure.
--   **Understanding of APIs and Endpoints :** Familiarity with how to interact with APIs and use endpoints for connecting to services in Azure.
--   **Knowledge of Security Best Practices :** Awareness of security principles related to cloud services, including handling keys, authentication, and securing resources.
+- **Basic understanding of cloud computing concepts**: Familiarity with cloud environments, particularly Azure, will help in navigating and understanding the migration process.
+
+- **Familiarity with .NET applications**: Understanding the structure and functioning of .NET web applications, particularly those running on IIS and using SQL databases.
+
+- **Azure account with required permissions**: Participants need an Azure subscription with permissions to create and manage resources like App Services, Virtual Machines, and Resource Groups.
+
+- **Basic knowledge of using Azure portal**: Comfort with the Azure portal interface, including creating and managing resources, navigating to various services, and configuring settings.
+
+- **Access to virtual machines running on Azure**: Access to the WebVM and SQLVM for the assessment and migration process.
 
 ## Architechture
 
-The architecture for integrating Azure AI services into applications involves using **Azure Cognitive Services**, such as **Computer Vision** for image analysis and **Anomaly Detector** for time-series data analysis. A client application communicates with these services via REST APIs, sending data for processing (images or time-series). The services are provisioned within an **Azure Resource Group** and interact with **Azure Blob Storage** for data storage. Results are returned to the application for further use, such as generating insights or triggering notifications. This architecture leverages Azure's managed services to provide scalable, intelligent capabilities for real-world applications.
+The architecture for migrating .NET applications to Azure involves using **Azure Migrate** to assess on-premises applications and databases for migration. The **App Service Migration Assistant** evaluates the compatibility of the web application with **Azure App Service**, a fully managed platform for web app hosting. The application is then migrated to **Azure App Service**, and a corresponding **App Service Plan** defines the resources and scaling options for the hosted app. The application’s backend database is migrated to **Azure SQL Database**, providing a managed, scalable solution for data storage. All resources are organized within an **Azure Resource Group** to ensure efficient management and deployment. This architecture enables seamless migration, scalability, and management of web applications in the cloud.
 
 ## Architechture Diagram
 
@@ -37,11 +40,19 @@ The architecture for integrating Azure AI services into applications involves us
 
 The architecture for this lab involves several key components:
 
--   **Computer Vision :** Provides image analysis capabilities, including object detection, text extraction, and image tagging.
--   **Anomaly Detector :** Analyzes time-series data to identify unusual patterns or anomalies.
--   **Azure Resource Group :** A container that organizes and manages Azure resources, including Cognitive Services, for efficient deployment and scaling.
--   **Azure Blob Storage :** Stores images or time-series data, providing scalable storage for input data used by the AI services.
--   **Output Insights :** Processed results from the AI services are returned to the client application for further action, such as generating insights or triggering automated responses.
+- **Azure Migrate**: A tool for assessing and migrating on-premises workloads to Azure, including applications and databases.
+
+- **App Service Migration Assistant**: A tool to assess the compatibility of on-premises .NET applications with Azure App Service.
+
+- **App Service Plan**: A resource in Azure that defines the region, capacity, and features of an Azure App Service. It’s used to host web apps and provides the compute resources required for your application.
+
+- **Azure App Service**: A fully managed platform to build, deploy, and scale web apps.
+
+- **Resource Group**: A container in Azure for organizing and managing resources like App Service and databases.
+
+- **Virtual Machine (WebVM & SQLVM)**: VMs hosting the web application and SQL Server database for assessment and migration.
+
+- **Azure SQL Database**: A managed database service in Azure for hosting the application's backend database post-migration.
 
 
 ## Getting Started with Lab
