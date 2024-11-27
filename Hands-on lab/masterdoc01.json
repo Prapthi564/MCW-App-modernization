@@ -7,15 +7,15 @@
       "Order": 1
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/1.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/01.md",
       "Order": 2
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/2.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/02.md",
       "Order": 3
     },
     {
-      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/3.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/03.md",
       "Order": 4
     }
   ]
