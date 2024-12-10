@@ -211,34 +211,6 @@ At this point, you have migrated the database schema using DMA. In this task, yo
 
    ![The contoso-dms Azure Database Migration Service is highlighted in the list of resources in the hands-on-lab-SUFFIX resource group.](media/updated51.png "Resources")
 
-1. On the Azure Database Migration Service Blade, select **+New Migration Project**.
-
-   ![On the Azure Database Migration Service blade, +New Migration Project is highlighted in the toolbar.](media/updated52.png "Azure Database Migration Service New Project")
-
-1. In the **Select migration scenario and Database Migration Service** enter the following and click on **Select** **(4)**:
-
-   - **Source server type**: select **SQLServer** **(1)**.
-   - **Target server type**: Select **Azure SQL Database** **(2)**.
-   - **Database Migration Service**: Select **Database Migration Service** **(3)**.
-
-     ![](images/search-datamigration-azure1.png)
-
-1. In the **Create Data Migration Service** of Basics blade, enter the following and click on **Review + create** **(5)**:
-
-   - **Subscription**: Select available Subscription **(1)**
-   - **Resource group**: From the drop down select **ODL-migrate-modernize-<inject key="DeploymentID" enableCopy="false"/>-MigrateServers** **(2)**.
-   - **Location**: **<inject key="region" enableCopy="false"/>** **(3)**.
-   - **Migration service name**: Enter the name as **parts-dms-<inject key="DeploymentID" enableCopy="false"/>** **(4)**.
-
-     ![](images/search-datamigration-azure2.png)
-
-1. In the Review + create blade, click on **Create**.
-
-   ![](images/search-datamigration-azure3.png)
-
-1. Once the Data Migration Service created successfully, click on **Go to resource**.
-
-    ![](images/search-datamigration-azure4.png)
 
 1. On the Azure Database Migration Service Blade, select **+ New Migration**.
 
