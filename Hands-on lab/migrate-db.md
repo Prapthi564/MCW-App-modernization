@@ -1,4 +1,4 @@
-# Exercise 4: Migrate the On-prem Database to Azure and configure it with Your App service.
+# Exercise 4: Migrate the On-prem Database to Azure and configure it with your App service.
 
 Duration: 80 minutes
 
