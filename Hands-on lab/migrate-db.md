@@ -1,6 +1,6 @@
-# Hand-On Lab: Migrate SQL to Azure SQL DB
+# Exercise 4: Migrate the On-prem Database to Azure and configure it with Your App service.
 
-Duration: 55 minutes
+Duration: 80 minutes
 
 The next step of Part Unlimited's migration project is the assessment and migration of its database. Currently, the database lives on SQL Server 2008 R2 on a virtual machine. You will use an **Azure Migrate: Database Assessment** tool called **Microsoft Data Migration Assistant (DMA)** to assess the `PartsUnlimited` database for migration to Azure SQL Database. The assessment generates a report detailing any feature parity and compatibility issues between the on-premises database and Azure SQL Database. After the assessment, you will use an **Azure Migrate: Database Migration** service called **Azure Database Migration Service (DMS)**. During the exercise, you will use a simulated on-premises environment hosted on virtual machines running on Azure.
 
