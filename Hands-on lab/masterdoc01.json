@@ -17,6 +17,10 @@
     {
       "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/microsoft-app-modernization-v2/Hands-on%20lab/03.md",
       "Order": 4
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MCW/MCW-App-modernization/refs/heads/microsoft-app-modernization-v2/Hands-on%20lab/migrate-db.md",
+      "Order": 5
     }
   ]
 } ]
