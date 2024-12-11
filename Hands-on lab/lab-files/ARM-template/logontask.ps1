@@ -1,7 +1,7 @@
 Start-Transcript -Path C:\WindowsAzure\Logs\logontask.txt -Append
 
 # Define the download URL and the local file path
-$downloadUrl = "https://download.microsoft.com/download/E/4/7/E4771905-1079-445B-8BF9-8A1A075D8A10/IntegrationRuntime_5.45.8999.1.msi"
+$downloadUrl = "https://download.microsoft.com/download/E/4/7/E4771905-1079-445B-8BF9-8A1A075D8A10/IntegrationRuntime_5.48.9076.1.msi"
 $installerPath = "$env:TEMP\IntegrationRuntime.msi"
  
 # Download the MSI file
