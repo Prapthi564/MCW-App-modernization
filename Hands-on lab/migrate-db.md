@@ -1,12 +1,25 @@
-# Exercise 4: Migrate the On-prem Database to Azure and configure it with your App service.
+# Exercise 3: Migrate the On-prem Database to Azure and configure it with your App service.
 
 Duration: 80 minutes
 
 The next step of Part Unlimited's migration project is the assessment and migration of its database. Currently, the database lives on SQL Server 2008 R2 on a virtual machine. You will use an **Azure Migrate: Database Assessment** tool called **Microsoft Data Migration Assistant (DMA)** to assess the `PartsUnlimited` database for migration to Azure SQL Database. The assessment generates a report detailing any feature parity and compatibility issues between the on-premises database and Azure SQL Database. After the assessment, you will use an **Azure Migrate: Database Migration** service called **Azure Database Migration Service (DMS)**. During the exercise, you will use a simulated on-premises environment hosted on virtual machines running on Azure.
+## Lab objectives
+
+You will be able to complete the following tasks:
+
+- Task 1: Connect to your SqlServer2008 VM with RDP
+
+- Task 2: Perform assessment for migration to Azure SQL Database
+
+- Task 3: Retrieve connection information for SQL Databases (Optional)
+
+- Task 4: Migrate the database schema using the Data Migration Assistant
+
+- Task 5: Migrate the database using the Azure Database Migration Service 
 
 ## Task 1: Connect to your SqlServer2008 VM with RDP
 
-1. From your lab environment (**WebVM**), in the search bar, **Search** for **RDP** and **select** the **Remote Desktop Connection** app.
+1. From your lab environment (**WebVM**), in the search bar, **Search (1)** for **RDP (2)** and **select** the **Remote Desktop Connection (3)** app.
    
    ![](media/RDP-new.png)
 
@@ -35,7 +48,7 @@ Parts Unlimited would like an assessment to see what potential issues they might
 
     > **Note**: There is a known issue with screen resolution when using an RDP connection to Windows Server 2008 R2, which may affect some users. This issue presents itself as very small, hard to read text on the screen. The workaround for this is to use a second monitor for the RDP display, which should allow you to scale up the resolution to make the text larger.
 
-   ![In the Windows Start menu, "data migration" is entered into the search bar, and Microsoft Data Migration Assistant is highlighted in the Windows start menu search results.](media/updated37.png "Data Migration Assistant")
+   ![](media/updated37u.png)
 
 2. In the DMA dialog, select **+** from the left-hand menu to create a new project.
 
@@ -119,7 +132,7 @@ In this task, you will retrieve the Fully Qualified Domain Name for the Azure SQ
 
 1. In the [Azure portal](https://portal.azure.com), navigate to your **SQL database** resource by selecting the **parts** SQL database resource from the resources list.
 
-   ![The parts SQL database resource is highlighted in the list of resources.](media/updated44.png "SQL database")
+   ![](media/updated44.png)
 
 2. On the **Overview** Blade of your SQL database, copy the **Server name** and paste the value into a text editor, such as Notepad.exe, for later reference.
 
@@ -180,9 +193,9 @@ After you have reviewed the assessment results and you have ensured the database
 
     ![The schema deployment results are displayed, with 23 commands executed and 0 errors highlighted.](media/updated48.png "Schema deployment results")
 
-8. Launch SQL Server Management Studio (SSMS) from the Windows Start menu by typing "sql server management" **(1)** into the search bar, and then selecting **SQL Server Management Studio 17 (2)** in the search results.
+8. Launch SQL Server Management Studio (SSMS) from the Windows Start menu by typing "sql server management" **(1)** into the search bar, and then selecting **SQL Server Management Studio 18 (2)** in the search results.
 
-    ![In the Windows Start menu, "sql server management" is entered into the search bar, and SQL Server Management Studio 17 is highlighted in the Windows start menu search results.](media/appmod-dma.png "SQL Server Management Studio 17")
+    ![](media/appmod-dma.png)
 
 9. Connect to your Azure SQL Database, by selecting **Connect->Database Engine** in the Object Explorer, and then enter the following into the Connect to server dialog:
 
@@ -209,19 +222,19 @@ At this point, you have migrated the database schema using DMA. In this task, yo
 
 1. In the [Azure portal](https://portal.azure.com), navigate to your Azure Database Migration Service by selecting the **hands-on-lab-<inject key="DeploymentID" enableCopy="false"/>** resource group, and then selecting the **parts-dms-<inject key="DeploymentID" enableCopy="false"/>** Azure Database Migration Service from the list of resources.
 
-   ![The contoso-dms Azure Database Migration Service is highlighted in the list of resources in the hands-on-lab-SUFFIX resource group.](media/updated51.png "Resources")
+   ![](media/updated51.png)
 
 
 1. On the Azure Database Migration Service Blade, select **+ New Migration**.
 
-      ![The New migration project blade is displayed, with the values specified above entered into the appropriate fields.](images/click_new_migration_DMS.png "New migration project")
+    ![](media/click_new_migration_DMS.png)
 
 1. On the New migration project Blade, enter the following:
 
    - **Target server type**: Select **Azure SQL Database** **(1)**.
    - **Migration mode**: Select **Offline** **(2)**.
    - **Configure runtime settings** **(3)**.
-   - When the **Configure integration runtime** pop-up appears, copy any one of the **two keys** **(4)**into a notebook.
+   - When the **Configure integration runtime** pop-up appears, copy any one of the **two keys (4)** into a notebook.
 
      ![The New migration project blade is displayed, with the values specified above entered into the appropriate fields.](images/Select_target_preapre.png "New migration project")
 
@@ -245,7 +258,9 @@ At this point, you have migrated the database schema using DMA. In this task, yo
 
 1. On the Migration Wizard **Select source** Blade, enter the following:
 
-   - **Source SQL Server instance name**: Enter the Private IP address of SqlServer2022 that you copied in step no 1 **(1)**.    
+   - **Source SQL Server instance name**: Enter the Private IP address of SqlServer2022. **(1)**.  
+     >**Note** : To obtain the private IP address, search for and select **SqlServer2008** in the Azure portal. Navigate to the **Networking** section and copy the private IP address displayed there.
+
    - **Authentication type**: Select SQL Authentication **(2)**.
    
    - **Username**: Enter **PUWebSite** **(3)**
@@ -301,56 +316,11 @@ At this point, you have migrated the database schema using DMA. In this task, yo
 1. When the migration is complete, you should see the status as **Succeeded**.
 
     ![On the Migration job blade, the status of Completed is highlighted.](images/01-04-2024(15).png "Migration with Completed status")
-
- ## Summary
- 
-In this exercise, you have migrated the on-premises database to Azure SQL Database.
-
-## Task 6: Configure the application connection to SQL Azure Database
-
-Now that we have both our application and database migrated to Azure. It is time to configure our application to use the SQL Azure Database.
-
-1. In the [Azure portal](https://portal.azure.com), navigate to your `parts` SQL Database resource by selecting **Resource groups** from Azure services list, selecting the **hands-on-lab-<inject key="DeploymentID" enableCopy="false"/>** resource group, and selecting the `parts` SQL Database from the list of resources.
-
-   ![The parts SQL database resource is highlighted in the list of resources.](media/updated64.png "SQL database")
-
-2. Switch to the **Connection strings (1)** Blade, and copy the connection string under **ADO.NET(SQL authentication)** by selecting the copy button **(2)**.
-
-   ![Connection string panel if SQL Database is open. Copy button for ADO.NET connection string is highlighted.](media/appmod-ex4-t6-s2.png "Database connection string")
-
-3. Paste the value into a text editor, such as Notepad.exe, to replace the Password placeholder. Replace the `{your_password}` section with **<inject key="SQLVM Password" />**. Copy the full connection string with the replaced password for later use.
-
-    ![Notepad is open. SQL Connection string is pasted in. {your_password} placeholder is highlighted.](media/sql-connection-string-password-replace.png "Database connection string")
-
-4. Go back to the resource list, navigate to your partsunlimited-web-<inject key="DeploymentID" enableCopy="false"/> **(2)** App Service resource. You can search for `partsunlimited-web` **(1)** to find your Web App and App Service Plan.
-
-   ![The search box for resources is filled in with partsunlimited-web. The partsunlimited-web-20 Azure App Service is highlighted in the list of resources in the hands-on-lab-SUFFIX resource group.](media/updated66.png "Resources")
-
-5. Switch to the **Configuration (1)** Blade, and select **+New connection string (2)**.
-
-    ![App service configuration panel is open. +New connection string button is highlighted.](media/updated67.png "App Service Configuration")
-
-6. On the **Add/Edit connection string** panel, enter the following:
-
-   - **Name (1)**: Enter `DefaultConnectionString`
-   - **Value (2)**: Enter SQL Connection String you copied in Step 3.
-   - **Type (3)**: Select **SQLAzure**
-   - **Deployment slot setting (4)**: Check this option to make sure connection strings stick to a deployment slot. This will be helpful when we add additional deployment slots during the next exercises.
-   - Select **OK (5)**.
-
-    ![Add/Edit Connection string panel is open. Name field is set to DefaultConnectionString. Value field is set to the connection string copied in a previous step. Type is set to SQL Azure. Deployment slot setting checkbox is checked. The OK button is highlighted. ](media/updated68.png "Adding connection string")
-
-7. Select **Save** and **Continue** for the following confirmation dialog.
-
-    ![App Service Configuration page is open. Save button is highlighted.](media/updated69.png "App Service Configuration")
-
-8. Switch to the **Overview (1)** Blade, and select **Default domain (2)** to navigate to the Parts Unlimited web site hosted in our Azure App Service using Azure SQL Database.
-
-    ![Overview panel for the App Service is on screen. URL for the app service if highlighted.](media/appmod-ex4-t6-s8.png "App Service public URL")
-    
     
  ## Summary
  
 In this exercise, you have migrated the on-premises database to Azure SQL Database.
 
+### You have successfully completed the Exercise
 
+**Click Next to proceed to the Next exercise**
