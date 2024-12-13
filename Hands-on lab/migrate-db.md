@@ -293,7 +293,7 @@ At this point, you have migrated the database schema using DMA. In this task, yo
     
     - Select **Next: Map source and target databases >>**.
     
-       ![](images/Connecting_to_aTarget_database.png )
+        ![](images/Connecting_to_aTarget_database.png )
 
 1. On the Migration Wizard **Map to target databases** Blade, confirm that **PartsUnlimited** is checked as the source database, and **parts** is the target database on the same line, then select **Next: Select database tables to migrate >>**.
 
