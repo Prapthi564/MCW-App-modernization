@@ -12,6 +12,7 @@ This lab is designed to provide participants with practical experience in migrat
 
 - **Review the Legacy On-Prem Application**: Explore the on-premises application to understand the current setup and prepare for migration to Azure App Service.
 - **Set up Azure Migrate for Assessment and Migration**: Configure Azure Migrate for the assessment and migration process, ensuring that all necessary tools and resources are available for a smooth migration.
+- **Migrate the On-prem Database to Azure and configure it with your App service**: Assess the on-prem database and migrate it to Azure SQL Database, ensuring compatibility and readiness for Azure's environment.
 - **Migrate the Web Application with App Service Migration Assistant**: Perform the assessment of the web application and migrate it to Azure App Service, ensuring readiness and compatibility with Azure’s environment.
 
 ## Prerequisites
@@ -31,10 +32,6 @@ Participants should have the following prerequisites:
 ## Architechture
 
 The architecture for migrating .NET applications to Azure involves using **Azure Migrate** to assess on-premises applications and databases for migration. The **App Service Migration Assistant** evaluates the compatibility of the web application with **Azure App Service**, a fully managed platform for web app hosting. The application is then migrated to **Azure App Service**, and a corresponding **App Service Plan** defines the resources and scaling options for the hosted app. The application’s backend database is migrated to **Azure SQL Database**, providing a managed, scalable solution for data storage. All resources are organized within an **Azure Resource Group** to ensure efficient management and deployment. This architecture enables seamless migration, scalability, and management of web applications in the cloud.
-
-## Architechture Diagram
-
-![](media/im8.JPG)
 
 ## Explanation of Components
 
@@ -71,9 +68,9 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 ## Exploring Your Lab Resources
  
-To get a better understanding of your lab resources and credentials, navigate to the **Environment Details** tab.
+To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-   ![Create storage by clicking confirm.](media/ai-900-gettingstarted-04.png)
+   ![Create storage by clicking confirm.](media/environment_details.png)
  
 ## Utilizing the Split Window Feature
  
