@@ -64,6 +64,8 @@ $WebClient.DownloadFile("https://github.com/CloudLabs-MCW/MCW-App-modernization/
 
 $LabFilesDirectory = "C:\LabFiles"
 
+choco install self-hosted-integration-runtime --force
+
 #Enable Autologon
 $AutoLogonRegPath = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon"
 Set-ItemProperty -Path $AutoLogonRegPath -Name "AutoAdminLogon" -Value "1" -type String
