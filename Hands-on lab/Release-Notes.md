@@ -33,3 +33,7 @@
 ### 08 December 2022
 
  - Onboarded the lab
+--------------------------
+### 31 December 2024
+
+- Updated SQL Server Management Studio (SSMS) version was updated from 17 to 18.
