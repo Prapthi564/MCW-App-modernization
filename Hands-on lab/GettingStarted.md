@@ -84,7 +84,7 @@ In this hands-on lab, the architecture flow begins by using Azure Migrate to ass
 
 1. If you see the pop-up Action Required, keep default and then click on Ask later. If you see the pop-up Help us protect your account, click on Skip for now(14 days until this is required), and then click on Next.
 
-  ![](media/mfa.png "Enter MFA")
+   ![](media/mfa.png "Enter MFA")
 
  > NOTE: Do not enable MFA, select Ask Later.
      
