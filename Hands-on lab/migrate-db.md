@@ -26,13 +26,13 @@ You will be able to complete the following tasks:
 2. Paste the **SQLVM DNS Name (1)** in the **Computer** field and click on **Connect (2)**.
    * **SQLVM DNS Name**: **<inject key="SQLVM DNS Name" style="color:blue" />**
 
-   ![](media/m17.png)  
+   ![](media/m-17.png)  
  
-3. Now, enter the SQLVM **username**, and **password** provided below and then click on the **Ok** button. Please add the **dot** and **back-slash** “.\” before the username.
+3. Now, enter the SQLVM **Username (1)**, and **password (2)** provided below and then click on the **OK* (3)* button. Please add the **dot** and **back-slash** `.\` before the username.
    * **username**: **<inject key="SQLVM Username" style="color:blue" />** 
    * **password**: **<inject key="SQLVM Password" style="color:blue" />**
    
-   ![](media/vm1-more-choices.png) 
+   ![](media/m67.png) 
 
 4. Next, click on the **Yes** button to accept the certificate and add in trusted certificates.
 
