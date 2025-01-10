@@ -65,7 +65,13 @@ Welcome to your Migrate .NET Apps to Azure App Service Lab! We've prepared a com
  
 Once you're ready to dive in, your virtual machine and **Lab Guide** will be right at your fingertips within your web browser.
 
-   ![Create storage by clicking confirm.](media/gspage01.png)  
+   ![Create storage by clicking confirm.](media/m1.png)  
+
+## Utilizing the Zoom In/Out Feature
+
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+
+![Use the Split Window Feature](media/m2.png) 
 
 ### Virtual Machine & Lab Guide
  
@@ -75,29 +81,26 @@ Your virtual machine is your workhorse throughout the workshop. The lab guide is
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-   ![Create storage by clicking confirm.](media/environment_details.png)
+   ![Create storage by clicking confirm.](media/m63.png)
+
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
  
-   ![](media/GS8.png)
+   ![](media/m64.png)
  
 ## Managing Your Virtual Machine
  
-Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
  
-  ![](media/GS5.png)
+  ![](media/m65.png)
 
 ## Lab Validation
 
 1. After completing the task, hit the **Validate** button under Validation tab integrated within your lab guide. If you receive a success message, you can proceed to the next task, if not, carefully read the error message and retry the step, following the instructions in the lab guide.
 
-   ![Inline Validation](media/inline-validation.png)
-
-1. You can also validate the task by navigating to the **Lab Validation** tab, from the upper right corner in the lab guide section.
-
-   ![Lab Validation](media/lab-validation.png)
+   ![Inline Validation](media/m68.png)
 
 1. If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
@@ -130,7 +133,7 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
    ![](media/GS9.png)
 
-1. If you see the pop-up **You have free Azure Advisor recommendations!**, close the window to continue the lab.
+1. If you see the pop-up **You have free Azure Advisor recommendations!**, **close** the window to continue the lab.
 
 1. If a **Welcome to Microsoft Azure** popup window appears, click **Maybe Later** to skip the tour.
 
@@ -144,6 +147,6 @@ Learner Support Contacts:
 
 Now, click on **Next** from the lower right corner to move on to the next page.
 
-![](media/GS4.png)
+![](media/m66.png)
 
 ### Happy Learning!!
